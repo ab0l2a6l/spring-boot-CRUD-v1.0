@@ -17,30 +17,30 @@ public class PersonService {
     private final PersonDA personDA;
 
     @Transactional
-    public void save(Person person){
+    public void save(Person person) {
         log.info("invoke person save . . .");
         personDA.save(person);
     }
 
 
     @Transactional
-    public void update(Person person){
+    public void update(Person person) {
         log.info("invoke person update . . .");
         personDA.save(person);
     }
 
     @Transactional
-    public void remove(Person person){
+    public void remove(Person person) {
         log.info("invoke person remove  . . .");
         personDA.delete(person);
     }
 
-    public List<Person> findAll(){
+    public List<Person> findAll() {
         log.info("invoke person findAll . . .");
         return personDA.findAll();
     }
 
-    public Optional<Person> findOne(Person person){
+    public Optional<Person> findOne(Person person) {
         log.info("invoke person findOne . . .");
         return personDA.findById(person.getId());
     }

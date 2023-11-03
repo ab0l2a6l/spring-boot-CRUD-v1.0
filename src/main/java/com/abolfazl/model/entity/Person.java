@@ -25,6 +25,6 @@ public class Person {
     private String family;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "person_car", joinColumns = {@JoinColumn(name = "person_id")},inverseJoinColumns = {@JoinColumn(name = "car_id")})
+    @JoinTable(name = "person_car", joinColumns = {@JoinColumn(name = "person_id")}, inverseJoinColumns = {@JoinColumn(name = "car_id")})
     private List<Car> carList;
 }

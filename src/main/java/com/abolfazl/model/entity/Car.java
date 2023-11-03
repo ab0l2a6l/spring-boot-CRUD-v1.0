@@ -21,6 +21,6 @@ public class Car {
     @Column(name = "model", columnDefinition = "varchar(20)")
     private String model;
 
-    @ManyToMany(mappedBy = "carList", cascade =  CascadeType.PERSIST)
+    @ManyToMany(mappedBy = "carList", cascade = CascadeType.PERSIST)
     private List<Person> person;
 }

@@ -19,30 +19,30 @@ public class CarAPI {
     private final CarService carService;
 
     @GetMapping("/save")
-    public ResponseEntity<Object> save(@ModelAttribute Car car){
+    public ResponseEntity<Object> save(@ModelAttribute Car car) {
         carService.save(car);
         return ResponseEntity.ok(car);
     }
 
     @GetMapping("/update")
-    public ResponseEntity<Object> update(@ModelAttribute Car car){
+    public ResponseEntity<Object> update(@ModelAttribute Car car) {
         carService.update(car);
         return ResponseEntity.ok(car);
     }
 
     @GetMapping("/remove")
-    public ResponseEntity<Object> remove(@ModelAttribute Car car){
+    public ResponseEntity<Object> remove(@ModelAttribute Car car) {
         carService.remove(car);
         return ResponseEntity.ok(car);
     }
 
     @GetMapping("/findAll")
-    public ResponseEntity<List<Car>> findAll(){
+    public ResponseEntity<List<Car>> findAll() {
         return ResponseEntity.ok(carService.findAll());
     }
 
     @GetMapping("/findOne")
-    public ResponseEntity<Optional<Car>> findAll(@ModelAttribute Car car){
+    public ResponseEntity<Optional<Car>> findAll(@ModelAttribute Car car) {
         return ResponseEntity.ok(carService.findOne(car));
     }
 
