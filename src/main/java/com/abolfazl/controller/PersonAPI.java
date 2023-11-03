@@ -13,12 +13,13 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @RequestMapping("/person")
 public class PersonAPI {
+
     private final PersonService personService;
 
     @PostMapping("/save")
     public ResponseEntity<Object> save(@RequestBody Person person) {
-            personService.save(person);
-            return ResponseEntity.ok(person);
+        personService.save(person);
+        return ResponseEntity.ok(person);
 
     }
 
