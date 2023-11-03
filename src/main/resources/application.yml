@@ -1,0 +1,10 @@
+server.port: 8080
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/abol
+    driver-class-name: com.mysql.jdbc.Driver
+    password: Am311865186
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
