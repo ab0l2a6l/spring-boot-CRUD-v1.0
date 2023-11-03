@@ -29,10 +29,10 @@ public class PersonAPI {
         return ResponseEntity.ok(person);
     }
 
-    @PostMapping("/remove")
-    public ResponseEntity<Object> remove(@RequestBody Person person) {
-        personService.remove(person);
-        return ResponseEntity.ok(person);
+    @DeleteMapping("/remove")
+    public ResponseEntity<Object> remove(@PathVariable long id) {
+        personService.remove(id);
+        return ResponseEntity.ok("deleted");
     }
 
     @GetMapping("/findAll")

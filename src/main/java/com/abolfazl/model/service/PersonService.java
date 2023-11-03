@@ -11,7 +11,7 @@ public interface PersonService {
 
     void update(Person person);
 
-    void remove(Person person);
+    void remove(long id);
 
     List<Person> findAll();
 

@@ -28,10 +28,10 @@ public class CarAPI {
         return ResponseEntity.ok(car);
     }
 
-    @PostMapping("/remove")
-    public ResponseEntity<Object> remove(@RequestBody Car car) {
-        carService.remove(car);
-        return ResponseEntity.ok(car);
+    @DeleteMapping("/remove/{id}")
+    public ResponseEntity<Object> remove(@PathVariable long id) {
+        carService.remove(id);
+        return ResponseEntity.ok("deleted");
     }
 
     @GetMapping("/findAll")

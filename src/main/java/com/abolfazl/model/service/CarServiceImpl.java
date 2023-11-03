@@ -32,9 +32,9 @@ public class CarServiceImpl implements CarService {
 
     @Override
     @Transactional
-    public void remove(Car car) {
+    public void remove(long id) {
         log.info("invoke delete car . . .");
-        carDA.delete(car);
+        carDA.deleteById(id);
     }
 
     @Override

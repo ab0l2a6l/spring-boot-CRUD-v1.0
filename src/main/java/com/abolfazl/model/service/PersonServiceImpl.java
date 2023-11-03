@@ -32,9 +32,9 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     @Transactional
-    public void remove(Person person) {
+    public void remove(long id) {
         log.info("invoke person remove  . . .");
-        personDA.delete(person);
+        personDA.deleteById(id);
     }
 
     @Override

@@ -10,7 +10,7 @@ public interface CarService {
 
     void update(Car car);
 
-    void remove(Car car);
+    void remove(long id);
 
     List<Car> findAll();
 
