@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Table(name = "car")
 @Entity(name = "car")
 @Data
@@ -18,4 +20,7 @@ public class Car {
 
     @Column(name = "model", columnDefinition = "varchar(20)")
     private String model;
+
+    @ManyToMany(mappedBy = "carList", cascade =  CascadeType.PERSIST)
+    private List<Person> person;
 }

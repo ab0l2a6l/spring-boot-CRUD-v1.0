@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Table(name = "person")
 @Entity(name = "person")
 @Data
@@ -21,4 +23,8 @@ public class Person {
 
     @Column(name = "family", columnDefinition = "varchar(20)")
     private String family;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "person_car", joinColumns = {@JoinColumn(name = "person_id")},inverseJoinColumns = {@JoinColumn(name = "car_id")})
+    private List<Car> carList;
 }
