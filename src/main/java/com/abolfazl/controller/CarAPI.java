@@ -4,10 +4,7 @@ import com.abolfazl.model.entity.Car;
 import com.abolfazl.model.service.CarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,20 +15,20 @@ import java.util.Optional;
 public class CarAPI {
     private final CarService carService;
 
-    @GetMapping("/save")
-    public ResponseEntity<Object> save(@ModelAttribute Car car) {
+    @PostMapping("/save")
+    public ResponseEntity<Object> save(@RequestBody Car car) {
         carService.save(car);
         return ResponseEntity.ok(car);
     }
 
-    @GetMapping("/update")
-    public ResponseEntity<Object> update(@ModelAttribute Car car) {
+    @PostMapping("/update")
+    public ResponseEntity<Object> update(@RequestBody Car car) {
         carService.update(car);
         return ResponseEntity.ok(car);
     }
 
-    @GetMapping("/remove")
-    public ResponseEntity<Object> remove(@ModelAttribute Car car) {
+    @PostMapping("/remove")
+    public ResponseEntity<Object> remove(@RequestBody Car car) {
         carService.remove(car);
         return ResponseEntity.ok(car);
     }

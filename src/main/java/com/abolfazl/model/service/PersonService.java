@@ -40,8 +40,8 @@ public class PersonService {
         return personDA.findAll();
     }
 
-    public Optional<Person> findOne(Person person) {
+    public Optional<Person> findOne(long id) {
         log.info("invoke person findOne . . .");
-        return personDA.findById(person.getId());
+        return personDA.findById(id);
     }
 }

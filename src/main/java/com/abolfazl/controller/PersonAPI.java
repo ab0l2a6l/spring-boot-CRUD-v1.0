@@ -15,20 +15,21 @@ import java.util.Optional;
 public class PersonAPI {
     private final PersonService personService;
 
-    @GetMapping("/save")
-    public ResponseEntity<Object> save(@ModelAttribute Person person) {
-        personService.save(person);
-        return ResponseEntity.ok(person);
+    @PostMapping("/save")
+    public ResponseEntity<Object> save(@RequestBody Person person) {
+            personService.save(person);
+            return ResponseEntity.ok(person);
+
     }
 
-    @GetMapping("/update")
-    public ResponseEntity<Object> update(@ModelAttribute Person person) {
+    @PostMapping("/update")
+    public ResponseEntity<Object> update(@RequestBody Person person) {
         personService.update(person);
         return ResponseEntity.ok(person);
     }
 
-    @GetMapping("/remove")
-    public ResponseEntity<Object> remove(@ModelAttribute Person person) {
+    @PostMapping("/remove")
+    public ResponseEntity<Object> remove(@RequestBody Person person) {
         personService.remove(person);
         return ResponseEntity.ok(person);
     }
@@ -38,9 +39,9 @@ public class PersonAPI {
         return ResponseEntity.ok(personService.findAll());
     }
 
-    @GetMapping("/findOne")
-    public ResponseEntity<Optional<Person>> findOne(@ModelAttribute Person person) {
-        return ResponseEntity.ok(personService.findOne(person));
+    @GetMapping("/findOne/{id}")
+    public ResponseEntity<Optional<Person>> findOne(@PathVariable("id") long id) {
+        return ResponseEntity.ok(personService.findOne(id));
     }
 
 }
