@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/person")
 public class PersonAPI {
     private final PersonService personService;
 
